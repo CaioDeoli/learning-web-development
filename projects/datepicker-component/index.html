@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datepicker Component</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <div class="datepicker">
+      <input type="text" name="date" placeholder="dd/mm/yyyy" minlength="10" maxlength="10" />
+      <button type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="512" height="512"><path d="M19,2h-1V1c0-.55-.45-1-1-1s-1,.45-1,1v1H8V1c0-.55-.45-1-1-1s-1,.45-1,1v1h-1C2.24,2,0,4.24,0,7v12c0,2.76,2.24,5,5,5h14c2.76,0,5-2.24,5-5V7c0-2.76-2.24-5-5-5Zm-8,7v3h-3v-3h3Zm5,0v3h-3v-3h3Zm6,0v3h-4v-3h4ZM6,12H2v-3H6v3Zm-4,2H6v3H2v-3Zm6,0h3v3h-3v-3Zm3,5v3h-3v-3h3Zm2,0h3v3h-3v-3Zm0-2v-3h3v3h-3Zm5-3h4v3h-4v-3ZM5,4h14c1.65,0,3,1.35,3,3H2c0-1.65,1.35-3,3-3Zm-3,15H6v3h-1c-1.65,0-3-1.35-3-3Zm17,3h-1v-3h4c0,1.65-1.35,3-3,3Z"/></svg>
+      </button>
+      <div class="datepicker-underline">
+        <div class="unfocused-underline"></div>
+        <div class="focused-underline"></div>
+      </div>
+      <div class="datepicker-calendar">
+        <div class="calendar-month-switcher">
+          <span>October 2026</span>
+          <button type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M6.414,15.586H17.586a1,1,0,0,0,.707-1.707L12.707,8.293a1,1,0,0,0-1.414,0L5.707,13.879A1,1,0,0,0,6.414,15.586Z"/></svg>
+          </button>
+          <button type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="512" height="512"><path d="M6.414,9H17.586a1,1,0,0,1,.707,1.707l-5.586,5.586a1,1,0,0,1-1.414,0L5.707,10.707A1,1,0,0,1,6.414,9Z"/></svg>
+          </button>
+        </div>
+        <div class="calendar-body">
+          <div class="calendar-weeks">
+            <div>Su</div>
+            <div>Mo</div>
+            <div>Tu</div>
+            <div>We</div>
+            <div>Th</div>
+            <div>Fr</div>
+            <div>Sa</div>
+          </div>
+          <div class="calendar-days">
+            <button type="button" style="color: #aaaaaa; background-color: transparent;" disabled>27</button>
+            <button type="button" style="color: #aaaaaa; background-color: transparent;" disabled>28</button>
+            <button type="button" style="color: #aaaaaa; background-color: transparent;" disabled>29</button>
+            <button type="button" style="color: #aaaaaa; background-color: transparent;" disabled>30</button>
+            <button type="button">1</button>
+            <button type="button">2</button>
+            <button type="button">3</button>
+
+            <button type="button">4</button>
+            <button type="button">5</button>
+            <button type="button">6</button>
+            <button type="button">7</button>
+            <button type="button" class="current-day">8</button>
+            <button type="button">9</button>
+            <button type="button">10</button>
+
+            <button type="button">11</button>
+            <button type="button">12</button>
+            <button type="button">13</button>
+            <button type="button">14</button>
+            <button type="button">15</button>
+            <button type="button">16</button>
+            <button type="button">17</button>
+
+            <button type="button">18</button>
+            <button type="button">19</button>
+            <button type="button">20</button>
+            <button type="button">21</button>
+            <button type="button">22</button>
+            <button type="button">23</button>
+            <button type="button">24</button>
+
+            <button type="button">25</button>
+            <button type="button">26</button>
+            <button type="button">27</button>
+            <button type="button">28</button>
+            <button type="button">29</button>
+            <button type="button">30</button>
+            <button type="button">31</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <section class="credits-section">
+      <h2>Asset Credits</h2>
+      <div>
+        <a href="https://www.flaticon.com/uicons" target="_blank" rel="noopener noreferrer">
+          <img src="images/calendar-days.svg" />
+          <span>Uicons by Flaticon</span>
+        </a>
+        <a href="https://www.flaticon.com/uicons" target="_blank" rel="noopener noreferrer">
+          <img src="images/caret-up.svg" />
+          <span>Uicons by Flaticon</span>
+        </a>
+        <a href="https://www.flaticon.com/uicons" target="_blank" rel="noopener noreferrer">
+          <img src="images/caret-down.svg" />
+          <span>Uicons by Flaticon</span>
+        </a>
+      </div>
+    </section>
+  </footer>
+</body>
+
+</html>

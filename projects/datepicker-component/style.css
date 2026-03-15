@@ -1,0 +1,248 @@
+:root {
+  --body-background-color: #0f0f0f;
+  --body-color: #f1f1f1;
+  --body-font-family: Helvetica, Arial, sans-serif;
+  --link-color: #3ea6ff;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1rem;
+  background-color: var(--body-background-color);
+  color: var(--body-color);
+  font-family: var(--body-font-family);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  padding: 48px 16px 368px 16px;
+}
+
+.datepicker {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  color: var(--body-color);
+  border-bottom: 1px solid #717171;
+}
+
+.datepicker input {
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 0 4px 0 16px;
+  height: 40px;
+  color: var(--body-color);
+  letter-spacing: 0.1rem;
+  width: 128px;
+}
+
+.datepicker input:focus {
+  outline: none;
+}
+
+.datepicker > button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  padding-right: 16px;
+}
+
+.datepicker > button svg {
+  width: 16px;
+  height: auto;
+  fill: #aaaaaa;
+  transition: fill 0.25s ease;
+}
+
+.datepicker > button:hover svg,
+.datepicker > button:focus svg {
+  fill: var(--body-color);
+}
+
+.datepicker-underline {
+  position: relative;
+  height: 0;
+  flex-basis: 100%;
+}
+
+.datepicker-underline .unfocused-underline {
+  position: absolute;
+  border-bottom: #717171;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.datepicker-underline .focused-underline {
+  position: absolute;
+  border-bottom: 2px solid var(--body-color);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transform: scale3d(0, 1, 1);
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.25s ease;
+}
+
+.datepicker input:focus ~ .datepicker-underline .focused-underline {
+  transform: none;
+}
+
+.datepicker input:focus ~ .datepicker-calendar,
+.datepicker button:focus ~ .datepicker-calendar {
+  opacity: 1;
+  visibility: visible;
+}
+
+.datepicker input:focus ~ button svg {
+  fill: var(--body-color);
+}
+
+.datepicker .datepicker-calendar {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: calc(40px + 16px);
+  left: 0;
+  border-radius: 12px;
+  background-color: #212121;
+  padding: 16px;
+  transition: opacity 0.25s ease;
+
+  box-shadow:
+    rgba(0, 0, 0, 0.14) 0px 2px 2px 0px,
+    rgba(0, 0, 0, 0.12) 0px 1px 5px 0px,
+    rgba(0, 0, 0, 0.2) 0px 3px 1px -2px;
+}
+
+.datepicker .datepicker-calendar .calendar-month-switcher {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  padding: 0 4px;
+  margin-bottom: 8px;
+}
+
+.datepicker .datepicker-calendar .calendar-month-switcher span {
+  font-weight: 700;
+}
+
+.datepicker .datepicker-calendar .calendar-month-switcher button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+}
+
+.datepicker .datepicker-calendar .calendar-month-switcher button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.datepicker .datepicker-calendar .calendar-month-switcher button svg {
+  width: 14px;
+  height: auto;
+  fill: var(--body-color);
+}
+
+.datepicker .datepicker-calendar .calendar-body .calendar-weeks {
+  display: grid;
+  grid-template-columns: repeat(7, 26px);
+  grid-template-rows: 20px;
+  gap: 4px;
+  justify-items: stretch;
+  align-items: center;
+  padding-bottom: 4px;
+}
+
+.datepicker .datepicker-calendar .calendar-body .calendar-weeks div {
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 0 4px;
+  font-size: 0.75rem;
+  color: var(--body-color);
+  font-weight: 700;
+  text-align: center;
+}
+
+.datepicker .datepicker-calendar .calendar-body .calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 26px);
+  grid-template-rows: repeat(5, 20px);
+  gap: 4px;
+  justify-items: stretch;
+  align-items: center;
+}
+
+.datepicker .datepicker-calendar .calendar-body .calendar-days button {
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 0 4px;
+  font-size: 0.75rem;
+  color: var(--body-color);
+}
+
+.datepicker .datepicker-calendar .calendar-body .calendar-days button:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.datepicker .datepicker-calendar .calendar-body .calendar-days button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.datepicker .datepicker-calendar .calendar-body .calendar-days button.current-day {
+  background: var(--body-color);
+  color: #000000;
+}
+
+footer {
+  padding: 0 16px 48px 16px;
+}
+
+footer .credits-section h2 {
+  margin-bottom: 24px;
+}
+
+footer .credits-section div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+footer .credits-section div a {
+  flex-basis: calc(33.34% - 17px);
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+footer .credits-section div a:hover {
+  text-decoration: underline;
+}
+
+footer .credits-section div a img {
+  max-width: 72px;
+  filter: brightness(0) invert(1);
+}
+
+footer .credits-section div a span {
+  display: block;
+}
