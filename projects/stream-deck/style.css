@@ -18,8 +18,6 @@ body {
 body::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
   filter: blur(40px);
   background-image:
     radial-gradient(
@@ -27,10 +25,11 @@ body::before {
       #7a7a7a 20% 30%,
       #373737 60%);
   border-radius: 50%;
-  width: 90%;
+  width: 100%;
+  max-width: 420px;
   height: 40%;
   top: -10%;
-  left: 5%;
+  left: calc(50% - 210px);
   opacity: 0.2;
   pointer-events: none;
 }
@@ -38,8 +37,6 @@ body::before {
 body::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
   filter: blur(40px);
   background-image:
     radial-gradient(
@@ -47,10 +44,11 @@ body::after {
       #7a7a7a 20% 30%,
       #373737 60%);
   border-radius: 50%;
-  width: 90%;
+  width: 100%;
+  max-width: 420px;
   height: 40%;
   top: -10%;
-  left: 5%;
+  left: calc(50% - 210px);
   opacity: 0.2;
   z-index: 1;
   pointer-events: none;
@@ -109,6 +107,20 @@ main {
   pointer-events: none;
 }
 
+.menu .item button::after {
+  content: '';
+  position: absolute;
+  width: 78px;
+  height: 78px;
+  border-radius: 13px;
+  z-index: 1;
+  background-image: linear-gradient(
+    to top, 
+    transparent 80%, 
+    rgba(255, 255, 255, 0.15) 100%
+  );
+}
+
 .menu .item button .background {
   width: 74px;
   height: 74px;
@@ -118,11 +130,13 @@ main {
 }
 
 .menu .item button .background .glow {
-  background-image: linear-gradient(0, rgba(255, 255, 255, 0.075) 80%, rgba(255, 255, 255, 0.35) 100%);
+  background-image: linear-gradient(
+    to bottom,
+    transparent 80%,
+    rgba(255, 255, 255, 0.15) 100%);
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 3;
   border-radius: 12px;
 }
 
@@ -163,10 +177,6 @@ main {
   border-radius: 10px;
   filter: blur(0.3px);
   transition: filter 0.2s ease;
-}
-
-.menu .item button:hover .logo-wrap {
-  filter: blur(0);
 }
 
 .menu .item button .logo-wrap .logo {
@@ -239,7 +249,11 @@ main {
 
 .display::after {
   content: '';
-  background-image: linear-gradient(0, rgba(255, 255, 255, 0.075) 80%, rgba(255, 255, 255, 0.35) 100%);
+  background-image: linear-gradient(
+    to top, 
+    transparent 80%, 
+    rgba(255, 255, 255, 0.15) 100%
+  );
   width: 100%;
   height: 100%;
   position: absolute;
