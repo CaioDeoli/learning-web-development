@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Table UI</title>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <div class="table-top">
+      <div class="tooltip-wrap">
+        <button type="button" class="tool-button" aria-label="Show search input" aria-pressed="false">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m19.485 20.154l-6.262-6.262q-.75.639-1.725.989t-1.96.35q-2.398 0-4.064-1.666Q3.808 11.898 3.808 9.5t1.666-4.064t4.064-1.667t4.065 1.667T15.269 9.5q0 1.042-.369 2.017t-.97 1.668l6.262 6.261zM9.539 14.23q1.99 0 3.36-1.37t1.37-3.361t-1.37-3.36t-3.36-1.37t-3.361 1.37t-1.37 3.36t1.37 3.36t3.36 1.37"/></svg>
+        </button>
+        <div class="tooltip tooltip-left-bottom">Show search input</div>
+      </div>
+      <div class="tooltip-wrap">
+        <button type="button" class="tool-button" aria-label="Show filter modal" aria-pressed="false">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11.77 19q-.33 0-.55-.22t-.22-.55v-5.576L5.604 5.83q-.202-.27-.055-.55t.47-.28h11.962q.323 0 .47.28q.147.282-.055.55L13 12.655v5.577q0 .328-.22.549t-.55.22z"/></svg>
+        </button>
+        <div class="tooltip tooltip-left-bottom">Show filter modal</div>
+      </div>
+      <div class="tooltip-wrap">
+        <button type="button" class="tool-button" aria-label="Show settings modal" aria-pressed="false">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m10.135 21l-.362-2.892q-.479-.145-1.035-.454q-.557-.31-.947-.664l-2.668 1.135l-1.865-3.25l2.306-1.739q-.045-.27-.073-.558q-.03-.288-.03-.559q0-.252.03-.53q.028-.278.073-.626L3.258 9.126l1.865-3.212L7.771 7.03q.448-.373.97-.673q.52-.3 1.013-.464L10.134 3h3.732l.361 2.912q.575.202 1.016.463t.909.654l2.725-1.115l1.865 3.211l-2.382 1.796q.082.31.092.569t.01.51q0 .233-.02.491q-.019.259-.088.626l2.344 1.758l-1.865 3.25l-2.681-1.154q-.467.393-.94.673t-.985.445L13.866 21zm1.838-6.5q1.046 0 1.773-.727T14.473 12t-.727-1.773t-1.773-.727q-1.052 0-1.776.727T9.473 12t.724 1.773t1.776.727"/></svg>
+        </button>
+        <div class="tooltip tooltip-left-bottom">Show settings modal</div>
+      </div>
+      <div class="dropdown-wrap">
+        <div class="tooltip-wrap">
+          <button type="button" class="dropdown-button" aria-label="Show options dropdown" aria-pressed="false">
+            More options
+          </button>
+          <div class="tooltip tooltip-right-bottom">Show options dropdown</div>
+        </div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="max-width: 96px;">
+            <button type="button" aria-label="Change the order" aria-pressed="false">
+              <div>Id</div>
+              <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21l-6.346-6.346l.688-.688l5.158 5.151V2.981h1v16.117l5.158-5.157l.688.713z"/></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11.5 21V4.864l-5.158 5.152l-.688-.689L12 2.981l6.346 6.346l-.688.714L12.5 4.883V21z"/></svg>
+            </button>
+          </th>
+          <th class="d-none d-sm-table-cell">
+            <button type="button" aria-label="Change the order" aria-pressed="false">
+              <div>User</div>
+              <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21l-6.346-6.346l.688-.688l5.158 5.151V2.981h1v16.117l5.158-5.157l.688.713z"/></svg>
+              <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11.5 21V4.864l-5.158 5.152l-.688-.689L12 2.981l6.346 6.346l-.688.714L12.5 4.883V21z"/></svg>
+            </button>
+          </th>
+          <th class="d-none d-md-table-cell">
+            <button type="button" aria-label="Change the order" aria-pressed="false">
+              <div>Role</div>
+              <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21l-6.346-6.346l.688-.688l5.158 5.151V2.981h1v16.117l5.158-5.157l.688.713z"/></svg>
+              <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11.5 21V4.864l-5.158 5.152l-.688-.689L12 2.981l6.346 6.346l-.688.714L12.5 4.883V21z"/></svg>
+            </button>
+          </th>
+          <th class="d-none d-xl-table-cell">
+            <button type="button" aria-label="Change the order" aria-pressed="false">
+              <div>Email</div>
+              <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21l-6.346-6.346l.688-.688l5.158 5.151V2.981h1v16.117l5.158-5.157l.688.713z"/></svg>
+              <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11.5 21V4.864l-5.158 5.152l-.688-.689L12 2.981l6.346 6.346l-.688.714L12.5 4.883V21z"/></svg>
+            </button>
+          </th>
+          <th class="d-none d-lg-table-cell">
+            <button type="button" aria-label="Change the order" aria-pressed="false">
+              <div>Phone</div>
+              <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21l-6.346-6.346l.688-.688l5.158 5.151V2.981h1v16.117l5.158-5.157l.688.713z"/></svg>
+              <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11.5 21V4.864l-5.158 5.152l-.688-.689L12 2.981l6.346 6.346l-.688.714L12.5 4.883V21z"/></svg>
+            </button>
+          </th>
+          <th>
+            <button type="button" aria-label="Change the order" aria-pressed="false">
+              <div>Status</div>
+              <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m12 21l-6.346-6.346l.688-.688l5.158 5.151V2.981h1v16.117l5.158-5.157l.688.713z"/></svg>
+              <svg style="display: none;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11.5 21V4.864l-5.158 5.152l-.688-.689L12 2.981l6.346 6.346l-.688.714L12.5 4.883V21z"/></svg>
+            </button>
+          </th>
+          <th class="actions-column-th">
+            <div aria-hidden="true"></div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="cell-content-text">57</div>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div>Mariana Souza</div>
+          </td>
+          <td class="d-none d-md-table-cell">
+            <div class="cell-content-text">User</div>
+          </td>
+          <td class="d-none d-xl-table-cell">
+            <div>mariana.souza@email.com</div>
+          </td>
+          <td class="d-none d-lg-table-cell">
+            <div class="cell-content-text">+55 (21) 99876-5432</div>
+          </td>
+          <td>
+            <span class="badge badge-amber">inactive</span>
+          </td>
+          <td class="actions-column-td">
+            <div class="dropdown">
+              <div class="tooltip-wrap">
+                <button type="button" aria-label="Show actions dropdown" aria-pressed="false">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.462 13q-.413 0-.707-.294T5.462 12t.293-.706t.707-.294t.706.294t.293.706t-.293.706T6.46 13M12 13q-.413 0-.706-.294T11 12t.294-.706T12 11t.706.294T13 12t-.294.706T12 13m5.539 0q-.413 0-.707-.294T16.538 12t.294-.706t.706-.294t.707.294t.293.706t-.293.706t-.707.294"/></svg>
+                </button>
+                <div class="tooltip tooltip-right-bottom">Show actions dropdown</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-content-text">56</div>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div>Carlos Pereira</div>
+          </td>
+          <td class="d-none d-md-table-cell">
+            <div class="cell-content-text">Manager</div>
+          </td>
+          <td class="d-none d-xl-table-cell">
+            <div>carlos.pereira@email.com</div>
+          </td>
+          <td class="d-none d-lg-table-cell">
+            <div class="cell-content-text">+55 (31) 98765-4321</div>
+          </td>
+          <td>
+            <span class="badge badge-green">active</span>
+          </td>
+          <td class="actions-column-td">
+            <div class="dropdown">
+              <div class="tooltip-wrap">
+                <button type="button" aria-label="Show actions dropdown" aria-pressed="false">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.462 13q-.413 0-.707-.294T5.462 12t.293-.706t.707-.294t.706.294t.293.706t-.293.706T6.46 13M12 13q-.413 0-.706-.294T11 12t.294-.706T12 11t.706.294T13 12t-.294.706T12 13m5.539 0q-.413 0-.707-.294T16.538 12t.294-.706t.706-.294t.707.294t.293.706t-.293.706t-.707.294"/></svg>
+                </button>
+                <div class="tooltip tooltip-right-bottom">Show actions dropdown</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-content-text">55</div>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div>Ana Costa</div>
+          </td>
+          <td class="d-none d-md-table-cell">
+            <div class="cell-content-text">User</div>
+          </td>
+          <td class="d-none d-xl-table-cell">
+            <div>ana.costa@email.com</div>
+          </td>
+          <td class="d-none d-lg-table-cell">
+            <div class="cell-content-text">+55 (41) 97654-3210</div>
+          </td>
+          <td>
+            <span class="badge badge-green">active</span>
+          </td>
+          <td class="actions-column-td">
+            <div class="dropdown">
+              <div class="tooltip-wrap">
+                <button type="button" aria-label="Show actions dropdown" aria-pressed="false">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.462 13q-.413 0-.707-.294T5.462 12t.293-.706t.707-.294t.706.294t.293.706t-.293.706T6.46 13M12 13q-.413 0-.706-.294T11 12t.294-.706T12 11t.706.294T13 12t-.294.706T12 13m5.539 0q-.413 0-.707-.294T16.538 12t.294-.706t.706-.294t.707.294t.293.706t-.293.706t-.707.294"/></svg>
+                </button>
+                <div class="tooltip tooltip-right-bottom">Show actions dropdown</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-content-text">54</div>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div>Rafael Oliveira</div>
+          </td>
+          <td class="d-none d-md-table-cell">
+            <div class="cell-content-text">User</div>
+          </td>
+          <td class="d-none d-xl-table-cell">
+            <div>rafael.oliveira@email.com</div>
+          </td>
+          <td class="d-none d-lg-table-cell">
+            <div class="cell-content-text">+55 (51) 96543-2109</div>
+          </td>
+          <td>
+            <span class="badge badge-green">active</span>
+          </td>
+          <td class="actions-column-td">
+            <div class="dropdown">
+              <div class="tooltip-wrap">
+                <button type="button" aria-label="Show actions dropdown" aria-pressed="false">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.462 13q-.413 0-.707-.294T5.462 12t.293-.706t.707-.294t.706.294t.293.706t-.293.706T6.46 13M12 13q-.413 0-.706-.294T11 12t.294-.706T12 11t.706.294T13 12t-.294.706T12 13m5.539 0q-.413 0-.707-.294T16.538 12t.294-.706t.706-.294t.707.294t.293.706t-.293.706t-.707.294"/></svg>
+                </button>
+                <div class="tooltip tooltip-right-bottom">Show actions dropdown</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-content-text">53</div>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div>Juliana Rocha</div>
+          </td>
+          <td class="d-none d-md-table-cell">
+            <div class="cell-content-text">Admin</div>
+          </td>
+          <td class="d-none d-xl-table-cell">
+            <div>juliana.rocha@email.com</div>
+          </td>
+          <td class="d-none d-lg-table-cell">
+            <div class="cell-content-text">+55 (61) 95432-1098</div>
+          </td>
+          <td>
+            <span class="badge badge-amber">inactive</span>
+          </td>
+          <td class="actions-column-td">
+            <div class="dropdown">
+              <div class="tooltip-wrap">
+                <button type="button" aria-label="Show actions dropdown" aria-pressed="false">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.462 13q-.413 0-.707-.294T5.462 12t.293-.706t.707-.294t.706.294t.293.706t-.293.706T6.46 13M12 13q-.413 0-.706-.294T11 12t.294-.706T12 11t.706.294T13 12t-.294.706T12 13m5.539 0q-.413 0-.707-.294T16.538 12t.294-.706t.706-.294t.707.294t.293.706t-.293.706t-.707.294"/></svg>
+                </button>
+                <div class="tooltip tooltip-right-bottom">Show actions dropdown</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-content-text">52</div>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div>Bruno Martins</div>
+          </td>
+          <td class="d-none d-md-table-cell">
+            <div class="cell-content-text">User</div>
+          </td>
+          <td class="d-none d-xl-table-cell">
+            <div>bruno.martins@email.com</div>
+          </td>
+          <td class="d-none d-lg-table-cell">
+            <div class="cell-content-text">+55 (71) 94321-0987</div>
+          </td>
+          <td>
+            <span class="badge badge-green">active</span>
+          </td>
+          <td class="actions-column-td">
+            <div class="dropdown">
+              <div class="tooltip-wrap">
+                <button type="button" aria-label="Show actions dropdown" aria-pressed="false">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.462 13q-.413 0-.707-.294T5.462 12t.293-.706t.707-.294t.706.294t.293.706t-.293.706T6.46 13M12 13q-.413 0-.706-.294T11 12t.294-.706T12 11t.706.294T13 12t-.294.706T12 13m5.539 0q-.413 0-.707-.294T16.538 12t.294-.706t.706-.294t.707.294t.293.706t-.293.706t-.707.294"/></svg>
+                </button>
+                <div class="tooltip tooltip-right-bottom">Show actions dropdown</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-content-text">51</div>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div>Fernanda Alves</div>
+          </td>
+          <td class="d-none d-md-table-cell">
+            <div class="cell-content-text">Manager</div>
+          </td>
+          <td class="d-none d-xl-table-cell">
+            <div>fernanda.alves@email.com</div>
+          </td>
+          <td class="d-none d-lg-table-cell">
+            <div class="cell-content-text">+55 (81) 93210-9876</div>
+          </td>
+          <td>
+            <span class="badge badge-green">active</span>
+          </td>
+          <td class="actions-column-td">
+            <div class="dropdown">
+              <div class="tooltip-wrap">
+                <button type="button" aria-label="Show actions dropdown" aria-pressed="false">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.462 13q-.413 0-.707-.294T5.462 12t.293-.706t.707-.294t.706.294t.293.706t-.293.706T6.46 13M12 13q-.413 0-.706-.294T11 12t.294-.706T12 11t.706.294T13 12t-.294.706T12 13m5.539 0q-.413 0-.707-.294T16.538 12t.294-.706t.706-.294t.707.294t.293.706t-.293.706t-.707.294"/></svg>
+                </button>
+                <div class="tooltip tooltip-right-bottom">Show actions dropdown</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-content-text">50</div>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div>Patricia Gomes</div>
+          </td>
+          <td class="d-none d-md-table-cell">
+            <div class="cell-content-text">User</div>
+          </td>
+          <td class="d-none d-xl-table-cell">
+            <div>patricia.gomes@email.com</div>
+          </td>
+          <td class="d-none d-lg-table-cell">
+            <div class="cell-content-text">+55 (91) 91098-7654</div>
+          </td>
+          <td>
+            <span class="badge badge-green">active</span>
+          </td>
+          <td class="actions-column-td">
+            <div class="dropdown">
+              <div class="tooltip-wrap">
+                <button type="button" aria-label="Show actions dropdown" aria-pressed="false">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.462 13q-.413 0-.707-.294T5.462 12t.293-.706t.707-.294t.706.294t.293.706t-.293.706T6.46 13M12 13q-.413 0-.706-.294T11 12t.294-.706T12 11t.706.294T13 12t-.294.706T12 13m5.539 0q-.413 0-.707-.294T16.538 12t.294-.706t.706-.294t.707.294t.293.706t-.293.706t-.707.294"/></svg>
+                </button>
+                <div class="tooltip tooltip-right-bottom">Show actions dropdown</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-content-text">49</div>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div>Diego Ribeiro</div>
+          </td>
+          <td class="d-none d-md-table-cell">
+            <div class="cell-content-text">User</div>
+          </td>
+          <td class="d-none d-xl-table-cell">
+            <div>diego.ribeiro@email.com</div>
+          </td>
+          <td class="d-none d-lg-table-cell">
+            <div class="cell-content-text">+55 (85) 92109-8765</div>
+          </td>
+          <td>
+            <span class="badge badge-blue">pending</span>
+          </td>
+          <td class="actions-column-td">
+            <div class="dropdown">
+              <div class="tooltip-wrap">
+                <button type="button" aria-label="Show actions dropdown" aria-pressed="false">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.462 13q-.413 0-.707-.294T5.462 12t.293-.706t.707-.294t.706.294t.293.706t-.293.706T6.46 13M12 13q-.413 0-.706-.294T11 12t.294-.706T12 11t.706.294T13 12t-.294.706T12 13m5.539 0q-.413 0-.707-.294T16.538 12t.294-.706t.706-.294t.707.294t.293.706t-.293.706t-.707.294"/></svg>
+                </button>
+                <div class="tooltip tooltip-right-bottom">Show actions dropdown</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="cell-content-text">48</div>
+          </td>
+          <td class="d-none d-sm-table-cell">
+            <div>Caio de Oliveira</div>
+          </td>
+          <td class="d-none d-md-table-cell">
+            <div class="cell-content-text">Admin</div>
+          </td>
+          <td class="d-none d-xl-table-cell">
+            <div>caio.deoli.dev@gmail.com</div>
+          </td>
+          <td class="d-none d-lg-table-cell">
+            <div class="cell-content-text">+55 (81) 99686-4254</div>
+          </td>
+          <td>
+            <span class="badge badge-green">active</span>
+          </td>
+          <td class="actions-column-td">
+            <div class="dropdown">
+              <div class="tooltip-wrap">
+                <button type="button" aria-label="Show actions dropdown" aria-pressed="false">
+                  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.462 13q-.413 0-.707-.294T5.462 12t.293-.706t.707-.294t.706.294t.293.706t-.293.706T6.46 13M12 13q-.413 0-.706-.294T11 12t.294-.706T12 11t.706.294T13 12t-.294.706T12 13m5.539 0q-.413 0-.707-.294T16.538 12t.294-.706t.706-.294t.707.294t.293.706t-.293.706t-.707.294"/></svg>
+                </button>
+                <div class="tooltip tooltip-right-bottom">Show actions dropdown</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="table-bottom">
+      <p>Showing 1 to 10 of 57 entries</p>
+
+      <nav aria-label="Table">
+        <ul>
+          <li>
+            <button type="button" aria-label="Go to first page" aria-pressed="false">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11.25 17.308L5.942 12l5.308-5.308l.708.708L7.364 12l4.594 4.6zm6.1 0L12.042 12l5.308-5.308l.708.708l-4.594 4.6l4.594 4.6z"/></svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" aria-label="Go to previous page" aria-pressed="false">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M14 17.308L8.692 12L14 6.692l.708.708l-4.6 4.6l4.6 4.6z"/></svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" aria-label="Go to page 1" aria-pressed="false">1</button>
+          </li>
+          <li>
+            <button type="button" aria-label="Go to next page" aria-pressed="false">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.462 13q-.413 0-.707-.294T5.462 12t.293-.706t.707-.294t.706.294t.293.706t-.293.706T6.46 13M12 13q-.413 0-.706-.294T11 12t.294-.706T12 11t.706.294T13 12t-.294.706T12 13m5.539 0q-.413 0-.707-.294T16.538 12t.294-.706t.706-.294t.707.294t.293.706t-.293.706t-.707.294"/></svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" aria-label="Go to page 6" aria-pressed="false">6</button>
+          </li>
+          <li>
+            <button type="button" aria-label="Go to next page" aria-pressed="false">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m13.292 12l-4.6-4.6l.708-.708L14.708 12L9.4 17.308l-.708-.708z"/></svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" aria-label="Go to last page" aria-pressed="false">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10.537 12L5.942 7.4l.708-.708L11.958 12L6.65 17.308l-.708-.708zm6.1 0l-4.595-4.6l.708-.708L18.058 12l-5.308 5.308l-.708-.708z"/></svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </main>
+</body>
+
+</html>
